@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.wrap{
+	display: flex;
+	justify-content: space-between;
+
+	width: 938px;
+	margin: 0 auto;
+	padding: 3px;
+}
+
+
+/* 側邊工具列 */
+.sidebar{
+	text-align: center;
+
+	width: 296px;
+
+	font-size: 24px;
+	font-weight: bold;
+}
+
+	/* 標題 */
+	.sidebar h2{
+		padding: 20px 0;
+		color: #fff;
+		background: #37523d;
+	}
+
+	/* 種類清單 */
+	.category-menu li{
+		border: 1px solid #e7eeea;
+	}
+
+		/* 項目連結 */
+		.category-menu li a{
+			display: block;
+			padding: 20px 0;
+			
+			color: #37523d;
+			text-decoration: none;
+		}
+
+		/* 項目連結 hover 效果 */
+		.category-menu li a:hover{
+			background: #e7eeea;
+		}
+
+
+/* 內文 */
+.shopping-content{
+	width: 620px;
+
+	font-weight: bold;
+}
+
+	/* 購物方格 */
+	.shopping-box{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+		/* 個別購物方格 */
+		.shopping-box li{
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
+
+			/* 商品圖片 */
+			.shopping-box li img{
+				display: block;
+			}
+		
+			/* 商品名與價格 */
+			.commodities-and-prices{
+				display: flex;
+				justify-content: space-between;
+
+				color: #37523d;
+
+				font-size: 20px;
+			}
+
+				/* 共同屬性 (商品名與價格) */
+				.commodities-and-prices h3,
+				.commodities-and-prices p{
+					padding: 20px 0;
+					border: 2px solid #e7eeea;
+				}
+
+				/* 商品名 */
+				.commodities-and-prices h3{
+					width: 62%;
+				}
+				
+				/* 價格 */
+				.commodities-and-prices p{
+					width: 38%;
+				}
+
+			/* 加入購物車 連結 */
+			.shopping-box li h2 a{
+				display: block;
+				padding: 20px 0;
+				
+				color: #37523d;
+				background: #e7eeea;
+
+				font-size: 24px;
+				text-decoration: none;
+			}
+
+			/* 加入購物車 連結 hover 效果 */
+			.shopping-box li h2 a:hover{
+				color: #e7eeea;
+				background: #37523d;
+			}
+
+/* * {
+	background: #000 !important;
+	color: #0f0 !important;
+	outline: solid #f00 1px !important;
+	} */

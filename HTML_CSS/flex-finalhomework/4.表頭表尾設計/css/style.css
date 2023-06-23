@@ -1,0 +1,162 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 整體框架 */
+.wrap{
+	width: 1280px; 
+	margin: 0 auto;
+}
+
+
+/* 上方功能列 */
+.topbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background: #e7eeea;
+
+	box-shadow: 0px 5px 5px gray ;
+}
+	/* LOGO */
+	.topbar img{
+		padding: 16px 0px 16px 45px;
+	}
+
+	/* 功能列 */
+	.topbar-menu{
+		display: flex;
+		justify-content: flex-end;
+
+		margin-right: 32px;
+	}
+
+		/* 功能列連結 */
+		.topbar-menu li a{
+			display: block;
+			text-align: center;
+
+			width: 85px;
+			border-radius: 5px;
+			padding: 5px 0px;
+			
+			color: #37523d;
+
+			font-size: 20px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		/* 功能列連結 hover 效果  */
+		.topbar-menu li a:hover{
+			background: #37523d;
+			color: #e7eeea;
+		}
+
+
+/* 中間內文 */
+.article-content{
+	padding: 76px 340px 64px 340px;
+}
+
+	/* 共同屬性 */
+	.article-content h1,
+	.article-content p,
+	.article-content img{
+		margin-bottom: 20px;
+	}
+
+	/* 標題 */
+	.article-content h1{
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	/* 內文 */
+	.article-content p{
+		font-size: 16px;
+		line-height: 1.2;
+	}
+
+	
+/* 下方功能列 */
+.footer{
+	padding: 20px 0px;
+
+	background: #37523d;
+}
+
+	/* 功能列 */
+	.footer-menu{
+		display: flex;
+		justify-content: center;
+	}
+
+		/* 功能列連結 */
+		.footer-menu li a{
+			display: block;
+			text-align: center;
+
+			width: 80px;
+			border-radius: 5px;
+			padding: 5px 0px;
+
+			color: #fff;
+			
+			font-size: 18px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		/* 功能列連結 hover 效果  */
+		.footer-menu li a:hover{
+			background: #fff;
+			color: #37523d;
+		}

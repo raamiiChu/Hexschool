@@ -1,0 +1,179 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 整體框架 */
+.wrap{
+	width: 1280px; 
+
+	padding: 5px;
+	margin: 0 auto;
+}
+
+
+/* 共同屬性 */
+.header,
+.article-content,
+.footer{
+	display: flex;
+
+	border-radius: 5px;
+
+	background: #e7eeea;
+}
+
+
+/* 第一種排版 */
+.header{
+	margin-bottom: 48px;
+}
+
+	/* 母物件 */
+	.header-item{
+		display: flex;
+		justify-content: space-around;
+
+		margin: 30px 32px;
+	}
+
+		/* LOGO */
+		.header-logo img{
+			width: 55px;
+
+			margin-top: -15px;
+			margin-right: 10px;
+		}
+
+		/* 標題 */
+		.header-item div h2{
+			margin-bottom: 20px;
+
+			color: #37523d;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		/* 內文 */
+		.header-item div p{
+			font-size: 14px;
+			line-height: 1.2;
+		}
+
+
+/* 第二種排版 */
+.article-content{
+	text-align: center;
+
+	margin-bottom: 48px;
+}
+
+	/* 母物件 */
+	.article-content-item{
+		margin: 20px 32px;
+	}
+
+		/* 標題 */
+		.article-content-item h2{
+			margin: 14px 0px;
+
+			color: #37523d;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		/* 內文 */
+		.article-content-item p{
+			font-size: 14px;
+			line-height: 1.2;
+		}
+
+
+/* 第三種排版 */
+.footer{
+	flex-direction: column;
+}
+
+	/* 母物件 */
+	.footer-item{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 20px 32px;
+	}
+
+		/* LOGO */
+		.footer-item img{
+			margin: 0 10px;
+		}
+
+		/* 標題 */
+		.footer-item h2{
+			margin: 14px 0px;
+
+			color: #37523d;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		/* 內文 */
+		.footer-item p{
+			font-size: 14px;
+			line-height: 1.2;
+		}
+
+	/* 顛倒用 */
+	.reverse-item{
+		flex-direction: row-reverse;
+	}
+
+/* * {
+	background: #000 !important;
+	color: #0f0 !important;
+	outline: solid #f00 1px !important;
+  } */

@@ -1,0 +1,141 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 整體框架 */
+.wrap{
+	width: 300px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+
+/* 共同屬性 (標題) */
+.summary h2,
+.details h2{
+	text-align: center;
+
+	padding: 22px 0;
+
+	background: #e7eeea;
+
+	font-size: 28px;
+	font-weight: bold;
+}
+
+
+/* 共同屬性 (訂單摘要、訂單詳情) */
+.summary,
+.details{
+	border: 2px solid #e7eeea;
+
+	color: #829886;
+}
+
+
+/* 訂單摘要 */
+.summary{
+	margin-bottom: 18px;
+}
+
+	/* 帳單 */
+	.bill-list{
+		margin: 20px 0px;
+	}
+
+		/* 帳單項目 */
+		.bill-list li{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			margin: 10px 16px;
+		}
+
+		/* 總計 */
+		.total-bill{
+			font-size: 22px;
+			font-weight: bold;
+		}
+
+
+/* 訂單詳情 */
+.details{
+	
+}
+
+	/* 購物清單 */
+	.shopping-list{
+		margin: 8px 16px;
+	}
+
+		/* 清單項目 */
+		.shopping-list li{
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+
+			margin: 8px 0px;
+
+			font-size: 18px;
+		}
+
+			/* 項目價格 */
+			.shopping-list li div p{
+				padding-top: 8px;
+				
+				font-weight: bold;
+			}
+
+
+/* * {
+	background: #000 !important;
+	color: #0f0 !important;
+	outline: solid #f00 1px !important;
+	} */
