@@ -1,0 +1,18 @@
+.box-layer{
+    display: none;
+
+    width: 100px;
+    height: 100px;
+}
+
+.box1{
+    background: #000;
+}
+
+.box2{
+    background: red;
+}
+
+.box3{
+    background: blue;
+}

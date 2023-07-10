@@ -1,0 +1,45 @@
+.header{    
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    
+    background: #ffc4cb;
+}
+
+    .menu{
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+
+        .menu li{
+            width: 100px;
+        }
+
+            .btn{
+                display: block;
+
+                padding: 10px 0;
+                border: 1px solid #000;
+                
+                color: #000;
+                background: #fff;
+
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .btn:hover,
+            .btn.active{                
+                color: #fff;
+                background: #000;
+            }
+
+            .dropdown-open{
+                display: none;
+            }
+
+            /* .menu li:hover .dropdown-open{
+                display: block;
+            } */
