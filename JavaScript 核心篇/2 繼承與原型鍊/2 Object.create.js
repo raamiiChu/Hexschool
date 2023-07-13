@@ -18,8 +18,8 @@
 
 
 function Animal(family) {
-    this.kingdom = "動物界"
-    this.family = family || "人科"
+    this.kingdom = "動物界";
+    this.family = family || "人科";
 }
 
 // 不要用 arrow function
