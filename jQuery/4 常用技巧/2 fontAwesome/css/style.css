@@ -1,0 +1,14 @@
+.links{
+    width: 500px;
+    margin: 0 auto;
+}
+
+    .links li{
+        margin: 10px;
+    }
+
+    .links a{
+        font-size: 32px;
+        color: #000;
+        text-decoration: none;
+    }
