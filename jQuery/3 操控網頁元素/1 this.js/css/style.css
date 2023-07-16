@@ -1,0 +1,16 @@
+.menu{
+    width: 500px;
+    margin: 0 auto;
+}
+
+    .menu li{
+        padding: 5px;
+        border: 1px solid;
+        margin-bottom: 1em;
+    }
+
+    .menu li:hover,
+    .menu li.active{
+        background: blue;
+        color: #fff;
+    }

@@ -1,0 +1,29 @@
+.cart{
+    width: 500px;
+    margin: 20px auto;
+}
+
+    .cart > li{
+        margin-bottom: 1em;
+    }
+
+        .cart > li > a{
+            display: block;
+            padding: 5px;
+            color: blue;
+            border: 1px solid gray;
+        }
+
+        .cart > li > a:hover,
+        .cart > li > a.active{
+            background: blue;
+            color: #fff;
+        }
+
+        .cart ul{
+            display: none;
+        }
+
+            .cart li li{
+                margin: 5px 0;
+            }

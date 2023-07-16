@@ -1,0 +1,22 @@
+.cart{
+    width: 500px;
+    margin: 20px auto;
+}
+
+    .cart ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .cart li{
+            width: 30%;
+            height: 100px;
+            margin: 1%;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .cart h3.active{
+            background: blue;
+            color: #fff;
+        }

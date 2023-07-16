@@ -1,0 +1,21 @@
+.question-list{
+    width: 500px;
+    margin: 0 auto;
+}
+
+    .question h3{
+        border: 1px solid gray;
+        padding: 5px;
+        font-size: 18px;
+    }
+
+    .question h3:hover,
+    .question h3.active{
+        background: blue;
+        color: #fff;
+    }
+
+    .question p{
+        display: none;
+        padding: 5px;
+    }
