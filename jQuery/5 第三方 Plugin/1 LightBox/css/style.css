@@ -1,0 +1,17 @@
+.title{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+.single-image img,
+.image-sets img{
+    height: 300px;
+    object-fit: contain;
+}
+
+/* 可以自行修改 CSS 屬性 */
+/* 因為 display 屬性寫在 style 內，為了蓋過去所以用 important */
+/* .lb-dataContainer{
+    display: none !important;
+} */

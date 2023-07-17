@@ -1,0 +1,34 @@
+.swiper {
+    width: 600px;
+    height: 500px;
+
+    margin-top: 30px;
+}
+
+.swiper-slide{
+    text-align: center;
+}
+
+.swiper-slide img{
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+}
+
+.swiper-button-next, 
+.swiper-button-prev{
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff !important;
+    background: #0000009e;
+}
+
+.swiper-button-next:hover, 
+.swiper-button-prev:hover{
+    color: #0000009e !important;
+    background: #fff;
+}
+
+.swiper-scrollbar-drag{
+    background: #de4e4e !important;
+}
