@@ -1,0 +1,511 @@
+/* 調整字型 */
+body {
+    /* 這邊設定 flex 是為了讓 top-nav 能置中 */
+    display: flex;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 全域樣式 */
+a{
+    text-decoration: none;
+}
+
+
+/* 頂端導覽列 */
+.top-nav{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    
+    width: 1000px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    background: #fff;    
+}
+
+    /* 社群連結清單 */
+    .media-link{
+        display: flex;
+        justify-content: flex-end;
+        
+        padding: 0px 10px;
+
+        background-color: #f6f6f6;
+    }
+
+        /* 社群連結清單項目 */
+        .media-link li{
+            width: 110px;
+
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        /* 連結 */
+        .media-link li a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 5px 0px;
+        }
+
+        /* 連結 hover 效果 */
+        .media-link li a:hover{
+            background-color: #fff;
+            opacity: 0.8;
+        }
+            .media-link li a img{
+                margin-right: 5px;
+            }
+
+            .facebook{
+                border-right: 1px solid #cccccc;
+                
+                color: #4460a0;
+            }
+
+            .twitter{
+                color: #00aaec;
+            }
+
+
+    /* 標頭 */
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .header h1 a:hover{
+            opacity: 0.7;
+        }
+
+        /* LOGO 圖片文字 */
+        .header h1 a span{
+            display: none;
+        }
+
+        /* 標頭選單 */
+        .header-menu{
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+            margin-right: 15px;
+        }
+
+            /* 標頭選單項目 */
+            .header-menu li{
+                position: relative;
+                width: 100px;
+            }
+
+                /* 項目連結 */
+                .header-menu li a{
+                    display: block;
+                    padding: 16px 0;
+                    color: #00cc99;
+
+                    font-weight: bold;
+                }
+
+                /* 項目連結偽元素 */
+                .header-menu li a::after{
+                    content: "";
+                    position: absolute;
+                    top: 46px;
+                    left: 0px;
+                    
+                    width: 0%;
+                    border-bottom: 5px solid #00cc99;
+
+                    transition: all 0.5s;
+                }
+
+                /* 項目連結偽元素 hover 效果 */
+                .header-menu li a:hover::after{
+                    width: 100%;
+                }
+
+                /* 下拉式選單 */
+                .dropdown{
+                    display: none;
+
+                    position: absolute;
+
+                    background: #ffffffe0;
+                }
+                
+                .dropdown.active{
+                    display: block;
+                }
+
+
+/* 網頁內文框架 */
+.wrap{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 橫幅 */
+.swiper{
+    position: relative;
+    z-index: 0;
+}
+
+    /* Slides */
+    .swiper-slide{
+        height: 346px;
+
+        display: flex;
+        align-items: center;
+    }
+
+        /* Banner 圖片 */
+        .swiper-slide img{
+            object-fit: contain;
+
+        }
+
+        /* 橫幅標題 */
+        .swiper-slide h2{
+            position: absolute;
+            z-index: 5;
+            top: 100px;
+
+            width: 960px;
+            padding: 36px 60px;
+
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.2);
+            
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 3px;
+        }
+
+
+    /* slide 分頁標示 */
+    .swiper-pagination-bullet{
+        margin: 0 10px !important;
+        scale: 1.5;
+
+        background: #fff;
+        opacity: 1;
+    }
+
+    /* slide 分頁標示 ( hover 效果 ) ( 啟動 ) */
+    .swiper-pagination-bullet:hover,
+    .swiper-pagination-bullet-active{
+        cursor: pointer;
+        background: #00cc99;
+    }
+
+    /* 前後箭頭按鈕 */
+    .swiper-button-prev,
+    .swiper-button-next{
+        border-radius: 20px;
+        padding: 10px 5px;
+
+        color: #fff;
+        background: #000;
+        opacity: 0.7;
+    }
+
+    /* 前後箭頭按鈕 hover 效果 */
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover{
+        color: #000;
+        background: #fff;
+        opacity: 1;
+    }
+
+
+/* 課程 */
+.courses{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+    /* 課程方框 */
+    .course-item{
+        width: 300px;
+        border-radius: 5px;
+
+        line-height: 1.5;
+        letter-spacing: 1px;
+
+        box-shadow: 0px 2px 3px #d6d6d6;
+    }
+
+        /* 課程圖片 */
+        .course-item img{
+            width: 250px;
+            height: 135px;
+
+            /* 圖片塞滿設定的大小，沒填滿則留空白 */
+            object-fit: contain;
+
+            margin-top: 22px;
+        }
+
+        /* 課程標題 */
+        .course-item h3{
+            text-align: center;
+            margin-top: 8px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 共同屬性 */
+        .course-item p,
+        .course-item ul{
+            text-align: left;
+        }
+
+        /* 課程內文 */
+        .course-item p{
+            margin: 8px 20px 22px 20px;
+        }
+
+        /* 課程內文 ( 條列式 ) */
+        .course-item ul{
+            margin-top: -22px;
+
+            text-indent: 32px;
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+
+
+/* 比較表 */
+.comparison{
+    margin-top: 64px;
+}
+
+    /* 比較表標題 */
+    .comparison h2{
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    /* 表格 */
+    .comparison-table{
+        width: 840px;
+        margin: 28px auto 0px auto;
+    }
+
+        /* 表格每列的 hover 效果 */
+        .comparison-table tr:hover{
+            background: #00a67d56;
+        }
+
+        /* 共同屬性 */
+        .comparison-table tr th,
+        .comparison-table tr td{
+            padding: 12px 16px;
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+            
+            text-align: left;
+            letter-spacing: 1px;
+        }
+
+        /* columns 名稱 */
+        .comparison-table tr th{
+            background-color: #f7f7f7;
+
+            font-weight: bold;
+        }
+
+        /* 標註文字用 */
+        .marker{
+            color: #00a67d;
+
+            font-weight: bold;
+        }
+
+
+/* 使用者表單 */
+.user-form{
+    margin-top: 60px;
+    
+    color: #fff;
+    background: linear-gradient(#00644b, #009872);
+    
+    font-weight: bold;
+}
+
+    /* 表單標題 */
+    .user-form h2{
+        padding: 36px 0px;
+        
+        color: #fff;
+
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        line-height: 1.5;
+    }
+
+    /* 表單 */
+    .user-form form{
+        display: flex;
+        justify-content: space-around;
+
+        padding-bottom: 30px;
+    }
+
+        /* 文字區塊 */
+        .user-form form textarea{
+            width: 460px;
+            padding: 5px;
+            border-radius: 5px;
+
+            /* 禁止拖動 */
+            resize: none; 
+
+            letter-spacing: 2px;
+        }
+
+        /* 文字區塊 focus 效果 */
+        .user-form form textarea:focus{
+            outline: 1px solid #00cc99;
+        }
+    
+        /* 使用者訊息欄位 */
+        .user-info{
+            display: flex;
+            flex-direction: column;
+
+            width: 460px;
+        }
+
+            /* 共同屬性 */
+            .user-info label,
+            .user-info input{
+                letter-spacing: 2px;
+            }
+
+            /* 欄位標籤 */
+            .user-info label{
+                margin-bottom: 5px;
+            }
+
+            /* 輸入欄位 */
+            .user-info input{
+                padding: 10px;
+                margin-bottom: 16px;
+                
+                border-radius: 5px;
+                border: 1px solid #00cc99;
+            }
+
+            /* 輸入欄位 focus 效果 */
+            .user-info input:focus{
+                outline: 1px solid #00cc99;
+            }
+
+            /* 送出按鈕 */
+            .btn-submit{
+                display: flex;
+                justify-content: flex-end;
+            }
+
+                .btn-submit input{
+                    width: 70px;
+                    margin-bottom: 0px;
+
+                    color: #fff;
+                    background-color: #00cc99;
+                }
+
+                /* 送出按鈕 hover 效果 */
+                .btn-submit input:hover{
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+
+/* 標尾 */
+.footer{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px 14px 42px 18px;
+}
+
+    /* LOGO 連結 */
+    .footer a{
+        display: flex;
+        padding: 5px;
+    }
+
+    .footer a:hover{
+        opacity: 0.6;
+    }
+
+        /* LOGO 連結圖片 */
+        .footer a img{
+            object-fit: contain;
+        }
+
+        /* LOGO 圖片文字 */
+        .footer a span{
+            display: none;
+        }
+
+
+    /* 聯繫方式 */
+    .contact-method li{
+        margin-bottom: 4px;
+        letter-spacing: 0.5px;
+    }
+
+        .contact-method li a{
+            display: inline-block;
+            color: #e12d80;
+        }
+
+        .contact-method li a:hover{
+            opacity: 0.6;
+        }
+
+
+/* 回到頂端按鈕 */
+.scroll-to-top{
+    position: fixed;
+    right: 10%;
+    bottom: 5%;
+
+    display: none;
+
+    padding: 22px 10px;
+    border: 2.5px solid #000;
+    border-radius: 25px;
+    
+    color: #00cc99;
+    background: #fff;
+}
+
+    /* 回到頂端按鈕 hover 效果 */
+    .scroll-to-top:hover{
+        color: #fff;
+        background: #00cc99;
+    }
+
+/* 檢查用 */
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+} */
