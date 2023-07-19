@@ -22,7 +22,7 @@ $(document).ready(function () {
         $(this).find(".dropdown").slideToggle(250);
         $(this).find(".dropdown").toggleClass("active");
         
-        // 關掉其他選單 ( 底下的程式碼能避免同時開啟兩個的選單，所以註解掉 )
+        // 關掉其他選單 ( 底下的 hover 事件 能避免同時開啟兩個的選單，所以先註解掉 )
         // $(this).siblings().find(".dropdown").slideUp(250);
         // $(this).siblings().find(".dropdown").removeClass("active");
     });
