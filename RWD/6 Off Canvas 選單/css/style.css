@@ -1,0 +1,100 @@
+a{
+  text-decoration: none
+}
+
+.container{
+  position: relative;
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.mobile-link,.mobile-close{
+  background: green;
+  color: #fff;
+  padding: 5px;
+  display: inline-block;
+  margin: .3em;
+  text-decoration: none;
+}
+.mobile-link{
+  display:none;
+}
+@media(max-width: 768px){
+  .mobile-link{
+    display:inline-block;
+  }
+}
+.main{
+  transition: all 0.3s;
+}
+.header{
+  height: 50px;
+  background: red;
+  margin-bottom: 1em;
+}
+.header .menu {
+  float: right;
+}
+.open .header .menu{
+  display: none;
+}
+.content {
+  padding: 1em;
+}
+.content p{
+  margin-bottom: 1em;
+}
+@media(max-width:767px){
+  .header .menu{
+    display: none;
+  }
+}
+.header .menu li{
+  float: left;
+}
+.header .menu li a{
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 1em;
+  display: block;
+  transition: all .8s;
+}
+.header .menu li a:hover{
+  background: orange;
+}
+.aside{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 270px;
+  height: 100%;
+  background: yellow;
+  overflow: hidden;
+  -webkit-transform: translateX(-270px);
+  transform: translateX(-270px);
+  transition: all .3s;
+}
+/*增加 class open 觸發選單*/
+.open .main{
+  -webkit-transform: translateX(270px);
+  transform: translateX(270px);
+}
+.open .aside{   
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.aside .menu li {
+  margin: 1em;
+  background: #000;
+  color: #fff;
+}
+.aside .menu li a{
+  color:#fff;
+  padding: 1em;
+  display: block;
+}
+.aside .menu li a:hover{
+  background: blue;
+}
+
