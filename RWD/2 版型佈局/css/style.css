@@ -28,7 +28,6 @@ a{
     display: flex;
     justify-content: flex-end;
 
-    width: 100%;  /* 1000px */
     padding: 0 0.625rem;  /* 0px 10px */
 
     background-color: #f6f6f6;
