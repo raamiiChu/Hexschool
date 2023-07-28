@@ -80,7 +80,6 @@ a{
     justify-content: space-between;
     align-items: center;
 
-    width: 100%;  /* 1000px */
     box-shadow: 0 0.25rem 0.25rem #00000088;  /* 0px 4px 4px */
 }
 
@@ -154,7 +153,6 @@ a{
     justify-content: space-around;
     text-align: center;
 
-    width: 100%;  /* 1000px */
     margin-top: 3.125rem;  /* 50px */
     flex-wrap: wrap;
 }
@@ -216,7 +214,6 @@ a{
             list-style-type: disc;
             list-style-position: inside;
         }
-
 
 
 /* 檢查用 */
