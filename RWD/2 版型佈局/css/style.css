@@ -170,8 +170,7 @@ a{
 
         /* 課程圖片 */
         .course-item img{
-            width: 83.3333%;  /* 250px */
-            height: 8.4375rem;  /* 135px */
+            max-width: 100%;
 
             margin-top: 1.375rem;  /* 22px */
             outline: 0.125rem solid #00000011;  /* 2px */
