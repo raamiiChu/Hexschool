@@ -183,7 +183,7 @@ a{
 
         /* 課程標題 */
         .course-item h2{
-            text-align: center;
+            /* text-align: center; */
             margin-top: 0.5rem;  /* 8px */
 
             font-size: 1.25rem;  /* 20px */
