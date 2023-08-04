@@ -1,0 +1,24 @@
+$w: 100px;
+$h: 100px;
+$primary-color: #e32929;
+$main-color: #000;
+
+.header{
+    width: $w;
+    height: $h;
+    background-color: $primary-color;
+}
+
+
+.main{
+    width: $w;
+    height: $h;
+    background-color: $main-color;
+}
+
+
+.footer{
+    width: $w;
+    height: $h;
+    background-color: $primary-color;
+}
