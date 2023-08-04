@@ -1,0 +1,26 @@
+@mixin pad{
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin iphone5{
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+
+.header{
+    max-width: 1000px;
+    height: 200px;
+    background: #000;
+
+    @include pad(){
+        background: blue;
+    }
+
+    @include iphone5(){
+        background: gray;
+    }
+}
