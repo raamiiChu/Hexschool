@@ -1,0 +1,8 @@
+.header h1 a{
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: url("../image/logo.png") no-repeat;
+
+    @include hide-text;
+}

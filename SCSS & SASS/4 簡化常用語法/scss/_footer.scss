@@ -1,0 +1,13 @@
+.footer{
+    .c1{
+        @include circle(30px, blue);
+    }
+
+    .c2{
+        @include circle(50px, green)
+    }
+
+    .c3{
+        @include circle(100px, gray)
+    }
+}

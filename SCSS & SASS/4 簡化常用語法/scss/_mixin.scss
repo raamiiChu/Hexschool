@@ -1,0 +1,15 @@
+@mixin hide-text{
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin circle($size, $bg-color){
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+
+    background: $bg-color;
+
+    font-size: $size / 3;
+}
