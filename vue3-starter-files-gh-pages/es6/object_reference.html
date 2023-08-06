@@ -11,20 +11,26 @@
 //   obj: {}
 // }
 
+// const person2 = person;
+// person2.name = "john";
+// console.log(person === person2);  // true
+
 
 // #2 陷阱
 // const fn = (item) => {
 //   item.name = '杰倫';
-//   // ...
 // }
 // const person = {
 //   name: '小明',
 //   obj: {}
 // }
 // fn(person);
-// // ...
 
 // console.log(person);
+// {
+//   name: '杰倫',
+//   obj: {}
+// }
 // 關於：這樣的錯誤，ESLint 也有建議不要這麼做（但你是有經驗的開發者時，下方也有提供關閉的方式）
 // https://cn.eslint.org/docs/rules/no-param-reassign
 
@@ -35,12 +41,34 @@
 //   obj: {}
 // }
 
+// const person2 = Object.assign({}, person);
+// const person3 = {...person};
+
+// console.log(person === person2);  // false
+// console.log(person === person3);  // false
+
+// console.log(person.obj === person2.obj);  // true
+// console.log(person.obj === person3.obj);  // true
+
+// person2.obj.name = "john";
+// console.log(person.obj);   // {name: 'john'}
+// console.log(person2.obj);  // {name: 'john'}
+// console.log(person3.obj);  // {name: 'john'}
+
 
 // #3-2 深層拷貝
-// const person = {
-//   name: '小明',
-//   obj: {}
-// }
+const person = {
+  name: '小明',
+  obj: {}
+}
+
+person2 = JSON.parse(JSON.stringify(person));
+console.log(person === person2);          // false
+console.log(person.obj === person2.obj);  // false
+
+person2.obj.name = "john";
+console.log(person.obj);   // {}
+console.log(person2.obj);  // {name: 'john'}
 
 </script>
 <!-- 🙇🙇練習結束🙇🙇 -->

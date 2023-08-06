@@ -20,6 +20,9 @@
 //   }
 // }
 // component.init();
+// // 1
+// // 2
+// // ... 已取得遠端資料
 
 // 更正確的說法，Promise 是為了解決傳統非同步語法難以建構及管理的問題，如有興趣可搜尋 "callback hell js"
 
@@ -33,34 +36,75 @@ const promiseSetTimeout = (status) => {
       } else {
         reject('promiseSetTimeout 失敗')
       }
-    }, 0);
+    }, 500);
   })
 }
 
 // #2-1 基礎運用
-
+// promiseSetTimeout(true)
+//   .then(function (res) {
+//     console.log(res);
+//   })
 
 // #2-2 串接
-
+// promiseSetTimeout(true)
+//   .then((res) => {
+//     console.log(1, res);  // 1 'promiseSetTimeout 成功'
+//     return promiseSetTimeout(true);
+//   })
+//   .then((res) => {
+//     console.log(2, res);  // 2 'promiseSetTimeout 成功'
+//   })
 
 // #2-3 失敗捕捉
-
+// promiseSetTimeout(false)
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);  // promiseSetTimeout 失敗
+//   })
 
 // #2-4 元件運用
 // const component = {
 //   data: {},
 //   init() {
-
+//     promiseSetTimeout(true)
+//       .then((res) => {
+//         this.data.res = res
+//         console.log(this.data);  // {res: 'promiseSetTimeout 成功'}
+//       })
 //   }
 // }
-
+// component.init();
 
 // #3 實戰取得遠端資料
 // #3-1
 // https://github.com/axios/axios
 
+// const URL = "https://randomuser.me/api/"
+// axios.get(URL)
+//   .then(res => {
+//     console.log(res);
+//     console.log(res.data.results);
+//   })
+//   .catch(err => {
+//     console.error(err.response); 
+//   })
+
+
 // #3-2 記得捕捉錯誤，Axios 錯誤捕捉技巧
 // https://randomuser.me/
+const URL = "https://randomuser.me/api/gg"
+axios.get(URL)
+  .then(res => {
+    console.log(res);
+    console.log(res.data.results);
+  })
+  .catch(err => {
+    console.error(err.response); 
+  })
+
 
 </script>
 <!-- 🙇🙇練習結束🙇🙇 -->

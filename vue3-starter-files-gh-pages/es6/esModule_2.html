@@ -8,13 +8,27 @@
 var a = 1;
 window.b = 2;
 </script>
+
 <div id="app">{{ counter }}</div>
+
 <script type="module">
 // #2 可以運用的 ESM 套件
 // 網路上找到的 “ESM”，如果條件允許是可以使用 import 方式載入
 // https://cdnjs.com/libraries/vue
 // 比對語法：https://v3.vuejs.org/guide/introduction.html#declarative-rendering
+// console.log(a);  // a is not defined
 
+import { createApp } from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.esm-browser.min.js";
+
+const Counter = {
+  data() {
+    return {
+      counter: 5
+    }
+  }
+}
+
+createApp(Counter).mount("#app")
 
 </script>
 <!-- 🙇🙇練習結束🙇🙇 -->

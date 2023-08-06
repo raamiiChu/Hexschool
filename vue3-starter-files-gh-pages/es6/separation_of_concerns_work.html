@@ -25,10 +25,17 @@ const component = {
     '這是第二句話',
     '這是第三句話'
   ],
+
+  addData(newData) {
+    this.data.push(newData)
+    this.render();
+  },
+  
   removeData(id) {
     this.data.splice(id, 1);
     this.render();
   },
+
   render() { // 渲染方法
     const list = document.querySelector('.component ul');
     let content = '';
@@ -48,8 +55,17 @@ const component = {
       this.removeData(id)
     }))
   },
+
+  // 生命週期（初始化）
   init() {
     this.render();
+
+    const addBtn = document.querySelector(".addBtn");
+    addBtn.addEventListener("click", () => {
+      const inputData =  document.querySelector(".inputData");
+      this.addData(inputData.value);
+      inputData.value = "";
+    })
   }
 }
 component.init();

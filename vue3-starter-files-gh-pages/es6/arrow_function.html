@@ -6,20 +6,26 @@
 // #1 箭頭函式的縮寫
 const arr = [1, 2, 3, 4, 5];
 
-// const filterArr = arr.filter(item => item % 2); // 取有餘數的值（單數）
-// console.log(filterArr);
+// const filterArr = arr.filter(function(item) {
+//   return item % 2
+// });
+// console.log(filterArr);  // [1, 3, 5]
+
+const filterArr = arr.filter(item => item % 2); // 取有餘數的值（單數）
+console.log(filterArr);  // [1, 3, 5]
 
 
 // #2 This 綁定的差異
 // #2-1 活用觀念，將內層的改為箭頭
+// 箭頭函式，沒有自己的 this
 // var name = '全域'
 // const person = {
 //   name: '小明',
 //   callName: function () { 
 //     console.log('1', this.name); // 1 小明
-//     setTimeout(function () {
-//       console.log('2', this.name); // 2
-//       console.log('3', this); // 3
+//     setTimeout(() => {
+//       console.log('2', this.name); // 2 小明
+//       console.log('3', this); // 3 {name: '小明'}
 //     }, 10);
 //   },
 // }
@@ -35,7 +41,7 @@ const arr = [1, 2, 3, 4, 5];
 //     console.log(this.name); // 請尋找箭頭所在的作用域為何？
 //   },
 // }
-// person.callName();
+// person.callName();  // 全域
 
 // #3-2
 // var name = '全域'
@@ -48,25 +54,41 @@ const arr = [1, 2, 3, 4, 5];
 //     callName();
 //   }
 // }
-// person.callMe();
+// person.callMe();  // 小明
 
 // #4 實戰手法
-// var someone = '全域';
-// function callSomeone() {
-//   console.log(this.someone);
-// }
+var someone = '全域';
+function callSomeone() {
+  console.log(this.someone);
+}
 
+
+// 4-1 this 先指向其他變數
 // var obj4 = {
 //   someone: '物件 4',
 //   fn() {
-//     // const vm = this; // vm 在 Vue 中意指 ViewModel
+//     const vm = this; // vm 在 Vue 中意指 ViewModel (也可以命名為 that)
 //     setTimeout(function () {
-//       console.log(this.someone);
+//       console.log(vm.someone);
 //     });
 //   }
 // }
 
-// obj4.fn();
+// obj4.fn();  // 物件 4
+
+
+// 4-2 使用箭頭函式
+var obj4 = {
+  someone: '物件 4',
+  fn() {
+    setTimeout(() => {
+      console.log(this.someone);  // 物件 4
+    });
+  }
+}
+
+obj4.fn();  // 物件 4
+
 </script>
 <!-- 🙇🙇練習結束🙇🙇 -->
 </main>
