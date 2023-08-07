@@ -42,6 +42,7 @@ const products = [{
 const App = {
   data() {
     return {
+      products: [],
       temp: {
         name: '卡斯伯',
         imageUrl: 'https://images.unsplash.com/photo-1602526430780-782d6b1783fa?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
@@ -50,8 +51,17 @@ const App = {
   },
   methods: {
     confirmEdit() {
+      // unix timestamp 創建獨一的 id
+      this.temp.id = new Date().getTime();
+      this.temp.onStock = false;
       console.log(this.temp);
+
+      this.products.push(this.temp);
+      this.temp = {};
     }
+  },
+  created() {
+    this.products = products;
   }
 };
 

@@ -14,7 +14,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr></tr>
+      <!-- :key 唯一值 -->
+      <tr v-for="item in products" :key="item.id" 
+      v-bind:class="{'table-success': item.onStock}">
+        <td>{{ item.name }}</td>
+        <td>
+          <img v-bind:src="item.imageUrl" alt="">
+        </td>
+        <td>
+          <input type="checkbox" value="" v-model="item.onStock">
+        </td>
+        <td>
+          <button type="button" value="" class="btn btn-outline-primary">編輯</button>
+        </td>
+      </tr>
     </tbody>
   </table>
   <form>

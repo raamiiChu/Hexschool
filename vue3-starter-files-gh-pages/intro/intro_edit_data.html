@@ -25,7 +25,7 @@
         </td>
         <td>
           <button type="button" class="btn btn-outline-primary"
-          >修改</button>
+          v-on:click="editItem(item)">修改</button>
         </td>
       </tr>
     </tbody>
@@ -76,10 +76,26 @@ const App = {
     }
   },
   methods: {
+    editItem(item) {
+      console.log(item);
+      this.temp = {...item};
+    },
     confirmEdit() {
-      this.temp.id = new Date().getTime();
-      this.temp.onStock = false;
-      this.products.push(this.temp);
+      // 新增資料
+      if (!this.temp.id){
+        this.temp.id = new Date().getTime();
+        this.temp.onStock = false;
+        this.products.push(this.temp);
+      }
+      // 修改資料
+      else{
+        this.products.forEach((item, i) => {
+          if (item.id === this.temp.id){
+            this.products[i] = this.temp;
+          }   
+        });
+      }
+
       this.temp = {};
     }
   },

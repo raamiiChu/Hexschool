@@ -4,7 +4,9 @@
 <!-- 🔥🔥練習開始🔥🔥 -->
 
 <div id="app">
-  
+  <div class="text-end">
+    <button class="btn btn-primary" type="button" v-on:click="addItem">新增</button>
+  </div>
   <table class="table">
     <thead>
       <tr>
@@ -31,7 +33,7 @@
       </tr>
     </tbody>
   </table>
-  <form>
+  <form v-if="isNew || temp.id">
     <div class="mb-3">
       <label for="productName" class="form-label">產品名稱</label>
       <input type="text" id="productName"
@@ -70,9 +72,14 @@ const App = {
     return {
       products: [],
       temp: {},
+      isNew: false,  // 決定是否為新增產品
     }
   },
   methods: {
+    addItem() {
+      this.isNew = true;
+      this.temp = {};
+    },
     editItem(item) {
       this.temp = { ...item }
     },
@@ -89,6 +96,7 @@ const App = {
         });
       }
       this.temp = {};
+      this.isNew = false;
     }
   },
   created() {
