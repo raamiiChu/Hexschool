@@ -1,0 +1,347 @@
+.cart-box {
+    @include display-flex(space-evenly);
+    // display: flex;
+    // justify-content: space-evenly;
+
+    padding: 3rem 0; // 48px
+
+    @include mobile-l() {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // 訂單導覽列
+    .cart-nav {
+        width: 20%;
+        margin-bottom: 1.5rem; // 24px
+
+        @include mobile-l() {
+            width: 95%;
+        }
+
+        // 標題
+        .cart-nav-title {
+            @include display-flex();
+            // display: flex;
+
+            margin-bottom: 1rem; // 16px
+
+            @include mobile-l() {
+                margin-left: 0.75rem; // 12px
+            }
+
+            h2 {
+                font-size: $text-l; // 20px
+            }
+        }
+
+        // 導覽列項目
+        .cart-nav-menu {
+            li {
+                border-bottom: 0.0625rem solid $primary-text-color; // 1px
+
+                // 項目連結
+                a {
+                    display: block;
+
+                    padding: 0.5rem; // 8px
+
+                    color: $primary-text-color; // #3d1101
+
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                // 項目連結 hover 效果
+                a:hover,
+                a:active {
+                    color: $text-white-color; // #fff
+                    background-color: $primary-text-color; // #3d1101
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    // 訂單內容
+    .cart-content {
+        width: 60%;
+
+        @include mobile-l() {
+            width: 95%;
+        }
+
+        // 訂單內容導覽列
+        .cart-content-top-bar {
+            @include display-flex(space-between, center);
+            // display: flex;
+            // justify-content: space-between;
+
+            margin-bottom: 2.5rem; // 24px
+
+            @include mobile-l() {
+                flex-direction: column;
+            }
+
+            form {
+                display: flex;
+                width: 70%;
+
+                // 手機: 變寬、調整下方間距
+                @include mobile-l() {
+                    width: 90%;
+
+                    margin-bottom: $text-l; // 20px;
+                }
+
+                input {
+                    padding: 0.25rem 0;
+                    border: 0.125rem solid $primary-text-color; // 2px #3d1101
+                }
+
+                input[type="text"] {
+                    width: 90%;
+
+                    font-size: $text-l; // 20px
+                    text-indent: 1rem;
+                }
+
+                input[type="text"]:focus {
+                    outline: 1px solid rgba(128, 128, 128, 0.5);
+                }
+
+                input[type="submit"] {
+                    width: 2rem;
+
+                    background-color: $primary-text-color; // #3d1101
+                    background-image: url("https://img.icons8.com/ios/32/ffffff/search--v1.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+
+                input[type="submit"]:hover,
+                input[type="submit"]:active {
+                    cursor: pointer;
+                    opacity: 0.85;
+                }
+            }
+
+            // 結帳、購物車
+            .checkout {
+                position: relative;
+
+                width: 25%;
+
+                @include display-flex(space-around);
+                // display: flex;
+                // justify-content: space-around;
+
+                // 手機: 變寬、靠右
+                @include mobile-l() {
+                    width: 50%;
+                    align-self: flex-end;
+                }
+
+                a {
+                    color: $primary-text-color; // #3d1101
+
+                    font-size: $text-m; // 16px
+                }
+
+                // 偽元素，中間的鉛直線
+                a.plumb-line::after {
+                    content: "";
+
+                    position: absolute;
+                    z-index: 30;
+                    top: 0;
+                    left: 55%;
+
+                    height: 100%;
+
+                    border-right: 0.125rem solid $primary-text-color; // 2px #3d1101
+                }
+            }
+        }
+
+        .cart-list {
+            @include display-flex();
+            // display: flex;
+
+            flex-wrap: wrap;
+            gap: 5%;
+
+            // 產品清單
+            li {
+                position: relative;
+
+                width: 30%;
+                margin-bottom: 2rem;
+                text-align: center;
+
+                background: #efe9e7;
+                box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+
+                // 2 欄式
+                @include tablet() {
+                    justify-content: center;
+                    width: 45%;
+                }
+
+                // 1 欄式
+                @include mobile-l() {
+                    width: 100%;
+                    gap: 0%;
+                }
+
+                // 左上方愛心
+                .fa-heart {
+                    position: absolute;
+                    z-index: 30;
+                    top: 3%;
+                    left: 3%;
+
+                    padding: 1rem 0.25rem;
+
+                    // 手機: 移到下方
+                    @include mobile() {
+                        top: 70%;
+                    }
+                }
+
+                .fa-heart:hover,
+                .fa-heart:active {
+                    cursor: pointer;
+                    scale: 1.2;
+                }
+
+                // 熱銷美食
+                .ribbon {
+                    position: absolute;
+                    top: -2%;
+                    right: -2%;
+                    z-index: 30;
+
+                    width: 90px;
+                    height: 90px;
+
+                    // white-space: nowrap;
+                    overflow: hidden;
+
+                    p {
+                        width: 120px;
+                        padding: 0.25rem; // 4px
+
+                        color: $text-white-color;
+                        background-color: #00cc99;
+
+                        font-size: $text-m; // 16px
+                        transform: rotate(45deg) translate(0.75rem, 0.5rem); // 12px 8px
+                    }
+                }
+
+                // 偽元素，左上、右下的方框
+                .ribbon::before,
+                .ribbon::after {
+                    content: "";
+
+                    position: absolute;
+                    z-index: -1;
+
+                    width: 15%;
+
+                    outline: 0.375rem solid #029e77;
+                }
+
+                .ribbon::before {
+                    top: 0%;
+                    left: 0%;
+                }
+
+                .ribbon::after {
+                    bottom: 7%;
+                    right: -7%;
+
+                    transform: rotate(90deg);
+
+                    @include mobile-l() {
+                        right: -3%;
+                    }
+
+                    @include mobile() {
+                        right: -7%;
+                    }
+                }
+
+                // 產品圖片
+                img {
+                    margin-bottom: 0.75rem; // 12px
+                }
+
+                // 中文名稱、金額
+                h3,
+                p {
+                    font-size: $text-l; // 20px
+                }
+
+                // 英文名稱
+                h4 {
+                    margin-bottom: 2rem; // 32px
+                    font-size: $text-s; // 12px
+
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                // 偽元素，水平線
+                h4::after {
+                    content: "";
+
+                    position: absolute;
+                    z-index: 30;
+                    top: 65%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    width: 40%;
+
+                    outline: 0.0625rem solid $primary-text-color; // 1px #3d1101
+                }
+
+                // 金額
+                p {
+                    margin-bottom: 1rem;
+                }
+
+                // 加入購物車
+                input {
+                    width: 90%;
+
+                    margin-bottom: 0.75rem; // 12px
+                    padding: 0.375rem; // 6px
+                    border: 0.125rem solid $add-to-cart-color; // 2px #ff5e45
+                    border-radius: 0.25rem; // 4px
+
+                    color: $add-to-cart-color; // #ff5e45
+
+                    // 圖片取自 Icon8
+                    background-image: url("https://img.icons8.com/material-rounded/24/ff5e45/shopping-cart.png");
+                    background-repeat: no-repeat;
+                    background-position: 16.6666% 50%;
+
+                    font-weight: bold;
+                }
+
+                input:hover,
+                input:active {
+                    cursor: pointer;
+
+                    color: $text-white-color; // #fff
+                    background-color: $add-to-cart-color; // #ff5e45
+                    background-image: url("https://img.icons8.com/material-rounded/24/ffffff/shopping-cart.png");
+                }
+            }
+        }
+    }
+}

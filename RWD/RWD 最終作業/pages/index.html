@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="description" content="六角西餐廳，為您提供豐富的饗宴" />
+        <meta property="og:title" content="六角西餐廳" />
+        <meta property="og:description" content="為您提供豐富的饗宴" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="FB上的網址" />
+        <meta property="og:image" content="FB的圖片" />
+
+        <title>RWD 最終作業-首頁</title>
+
+        <link rel="shortcut icon" href="../assets/Bitmap.png" />
+
+        <!-- google font noto sans TC -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- font-awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        />
+
+        <!-- LightBox -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+        />
+
+        <!-- swiper -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+        />
+
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <!-- 導覽列 -->
+            <nav class="nav-bar">
+                <!-- logo -->
+                <h1>
+                    <a href="./index.html">六角西餐廳</a>
+                </h1>
+
+                <a class="mobile-menu-dropdown" href="#">
+                    <i
+                        class="fa-solid fa-bars fa-2xl"
+                        style="color: #ffffff"
+                    ></i>
+                </a>
+
+                <ul class="menu">
+                    <li>
+                        <a class="current-page" href="./index.html">首頁</a>
+                    </li>
+                    <li>
+                        <a href="./cart.html">線上訂單</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">登入</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 標頭 ( banner ) -->
+            <header class="header">
+                <!-- 文字方塊 -->
+                <div class="header-content">
+                    <h2>咬一口就無法忘懷的漢堡</h2>
+                    <p>
+                        <span>七夕絕對無法錯過的好滋味</span><br />
+
+                        <i
+                            class="fa-solid fa-utensils"
+                            style="color: #ffffff"
+                        ></i>
+                        六角大漢堡
+                        <i
+                            class="fa-solid fa-utensils"
+                            style="color: #ffffff"
+                        ></i>
+                    </p>
+                </div>
+            </header>
+
+            <!-- 內文 -->
+            <main>
+                <div class="feature">
+                    <h2 class="feature-title">
+                        客人總是在詢問<br />
+                        這麼好吃的秘訣是什麼
+                    </h2>
+
+                    <ul class="feature-content">
+                        <li>
+                            <a
+                                href="../assets/feature_1@2x.png"
+                                data-lightbox="features"
+                                data-title="台灣本土蔬菜"
+                                data-alt="特色 1"
+                            >
+                                <img
+                                    src="../assets/feature_1.png"
+                                    alt="特色 1"
+                                />
+                            </a>
+
+                            <h3>台灣本土蔬菜</h3>
+                            <p>
+                                In hac habitasse platea dictumst. Vivamus
+                                adipiscing fermentum quam volutpat aliquam.
+                                Integer et elit eget elit facilisis tristique.
+                                Nam vel iaculis mauris.
+                            </p>
+                        </li>
+                        <li>
+                            <a
+                                href="../assets/feature_2@2x.png"
+                                data-lightbox="features"
+                                data-title="專業米其林廚師"
+                                data-alt="特色 2"
+                            >
+                                <img
+                                    src="../assets/feature_2.png"
+                                    alt="特色 2"
+                                />
+                            </a>
+
+                            <h3>專業米其林廚師</h3>
+                            <p>
+                                Sed ullamcorper tellus erat, non ultrices sem
+                                tincidunt euismod. Fusce rhoncus porttitor
+                                velit, eu bibendum nibh aliquet vel. Fusce lorem
+                                leo, vehicula at nibh quis, facilisis accumsan
+                                turpis.
+                            </p>
+                        </li>
+                        <li>
+                            <a
+                                href="../assets/feature_3@2x.png"
+                                data-lightbox="features"
+                                data-title="對於專業不能退讓"
+                                data-alt="特色 3"
+                            >
+                                <img
+                                    src="../assets/feature_3.png"
+                                    alt="特色 3"
+                                />
+                            </a>
+
+                            <h3>對於專業不能退讓</h3>
+                            <p>
+                                Fusce rhoncus porttitor velit, eu bibendum nibh
+                                aliquet vel. Fusce lorem leo, vehicula at nibh
+                                quis, facilisis accumsan turpis.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="chef">
+                    <a
+                        href="../assets/main_chef_brown@2x.png"
+                        data-lightbox="today-chef"
+                        data-title="今日主廚：帕金森、梅在帕"
+                        data-alt="今日主廚：帕金森、梅在帕"
+                    >
+                        <img src="../assets/main_chef_brown.png" alt="" />
+                    </a>
+
+                    <div class="chef-content">
+                        <h2>今日主廚：帕金森、梅在帕</h2>
+                        <h3>Today Chef: Plum in Shock</h3>
+                        <p>
+                            Mauris non tempor quam, et lacinia sapien. Mauris
+                            accumsan eros eget libero posuere vulputate. Etiam
+                            elit elit, elementum sed varius at, adipiscing vitae
+                            est. Sed nec felis pellentesque, lacinia dui sed,
+                            ultricies sapien. Pellentesque orci lectus,
+                            consectetur vel posuere posuere, rutrum eu ipsum.
+                            Aliquam eget odio sed ligula iaculis consequat at
+                            eget orci. Mauris molestie sit amet metus mattis
+                            varius. Donec sit amet ligula eget nisi sodales
+                            egestas. Aliquam interdum dolor aliquet dolor
+                            sollicitudin fermentum. Donec congue lorem a
+                            molestie bibendum.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 感想 -->
+                <div class="feelings">
+                    <h2>聽聽別人的感想</h2>
+
+                    <!-- 顧客感想 -->
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <ul class="swiper-wrapper">
+                            <!-- Slides -->
+                            <li class="swiper-slide">
+                                <img
+                                    src="../assets/avatar_1.png"
+                                    alt="顧客 1"
+                                />
+
+                                <div class="feelings-box">
+                                    <h3>高雄一口吃</h3>
+                                    <p>
+                                        自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
+                                    </p>
+                                    <p class="feelings-end">-- 產品經理</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <img
+                                    src="../assets/avatar_2.png"
+                                    alt="顧客 2"
+                                />
+
+                                <div class="feelings-box">
+                                    <h3>廟口小霸王</h3>
+                                    <p>
+                                        自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
+                                    </p>
+                                    <p class="feelings-end">-- 金身道士</p>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <img
+                                    src="../assets/avatar_3.png"
+                                    alt="顧客 3"
+                                />
+
+                                <div class="feelings-box">
+                                    <h3>春天也來了</h3>
+                                    <p>
+                                        自從吃了這家餐廳以後，我口水連續流了一個多月都沒停，下次不要再被我遇到，不然我一定連他們桌子都啃下去。
+                                    </p>
+                                    <p class="feelings-end">-- 美麗萬分</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+                <!-- 定位 -->
+                <div class="reservation">
+                    <h2>
+                        我們的位置不太夠坐<br />
+                        要不要先定位呢？
+                    </h2>
+
+                    <div class="reservation-details">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.6140119160227!2d120.31013001092182!3d22.630884630745772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e049232524023%3A0x43d45fb643327a1f!2z5L-h576p5ZyL5bCP!5e0!3m2!1szh-TW!2stw!4v1691593135881!5m2!1szh-TW!2stw"
+                            class="map"
+                            id="map"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+
+                        <form action="" method="">
+                            <label for="name">姓名</label>
+                            <input
+                                class="user-input"
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="請輸入姓名"
+                                required
+                            />
+
+                            <label for="telephone">電話</label>
+                            <input
+                                class="user-input"
+                                type="tel"
+                                name="telephone"
+                                id="telephone"
+                                placeholder="請輸入電話"
+                                required
+                            />
+
+                            <label for="email">信箱</label>
+                            <input
+                                class="user-input"
+                                id="email"
+                                type="email"
+                                name="email"
+                                placeholder="請輸入信箱"
+                                required
+                            />
+
+                            <label for="people">人數</label>
+                            <input
+                                class="user-input"
+                                type="number"
+                                name="people"
+                                id="people"
+                                min="0"
+                                max="50"
+                                step="1"
+                                placeholder="請輸入人數"
+                                value="1"
+                                required
+                            />
+
+                            <label for="not-vegan">是否需要素食</label>
+                            <div class="vegan-box">
+                                <input
+                                    id="vegan"
+                                    type="radio"
+                                    name="is-vegan"
+                                    value="true"
+                                    required
+                                />
+                                <label for="vegan">是</label>
+                                <input
+                                    id="not-vegan"
+                                    type="radio"
+                                    name="is-vegan"
+                                    value="false"
+                                />
+                                <label for="not-vegan">否</label>
+                            </div>
+
+                            <div class="final-btn">
+                                <input type="button" value="取消" />
+                                <input type="submit" value="送出" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <!-- 標尾 -->
+            <footer class="footer">
+                <ul class="footer-content">
+                    <!-- 關於 六角西餐廳 -->
+                    <li class="about-us">
+                        <h3>關於 六角西餐廳</h3>
+                        <p>
+                            Curabitur lobortis id lorem id bibndum. Ut id
+                            consectetur magna. Quisque volutpat augue enim,
+                            pulvinar lobortis nibh lacinia at.
+                        </p>
+                    </li>
+
+                    <!-- 聯絡方式 -->
+                    <li class="contact-us">
+                        <h3>聯絡方式</h3>
+                        <ul class="contact-details">
+                            <li>
+                                <a href="#map">高雄市中正五路到底</a>
+                            </li>
+                            <li>
+                                <a href="tel:+886 886 886">+886 886 886</a>
+                            </li>
+                            <li>
+                                <a href="mailto:service@hexschool.com">
+                                    service@hexschool.com
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 社群方塊 -->
+                <div class="media">
+                    <h2>
+                        <a href="./index.html">六角西餐廳</a>
+                    </h2>
+
+                    <!-- 社群連結 -->
+                    <ul class="media-links">
+                        <li>
+                            <a href="#">
+                                <i
+                                    class="fa-brands fa-google-plus-square fa-2xl"
+                                    style="color: #db4437"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i
+                                    class="fa-brands fa-twitter-square fa-2xl"
+                                    style="color: #41abe1"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i
+                                    class="fa-brands fa-facebook-square fa-2xl"
+                                    style="color: #3a5795"
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+        <!-- 回到頂端按鈕 -->
+        <a href="#" class="scroll-to-top">
+            <i class="fa-solid fa-arrow-up fa-2xl"></i>
+        </a>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="../js/all.js"></script>
+    </body>
+</html>

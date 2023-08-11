@@ -1,0 +1,145 @@
+// 標題
+.login-title {
+    @include padding(50, 0, 36, 0);
+    // padding: 50px 0 36px 0;
+
+    text-align: center;
+
+    // 六角西餐廳
+    h2 {
+        margin-bottom: 1.5rem; // 24px
+
+        font-size: $text-5xl; // 48px
+        font-weight: bold;
+
+        @include mobile-l() {
+            font-size: $text-4xl; // 36px
+        }
+    }
+
+    // 享受美食好味道
+    h3 {
+        font-size: $text-l; // 20px
+
+        @include mobile-l() {
+            font-size: $text-m; // 16px
+        }
+    }
+}
+
+// 登入方塊
+.login-box {
+    width: 33.3333%;
+    text-align: center;
+
+    margin: 0 auto;
+    padding: 0 1rem; // 16px
+    border-top: 0.1875rem solid #ff5e45; // 3px
+
+    background: #efe9e7;
+    box-shadow: 0.1875rem 0.1875rem 0.25rem 0 rgba(0, 0, 0, 0.16); // 3px 3px 4px
+
+    // 隨螢幕調整寬度占比
+    @include tablet() {
+        width: 66.6666%;
+    }
+
+    @include mobile-l() {
+        width: 80%;
+    }
+
+    @include mobile() {
+        width: 90%;
+    }
+
+    // LOGIN
+    h4 {
+        margin: 1rem 0; // 16px
+
+        font-size: $text-m; // 16px
+        font-weight: bold;
+    }
+
+    // 登入表單
+    .login-form {
+        @include display-flex($align-items: flex-start);
+        // display: flex;
+        // align-items: flex-start;;
+
+        flex-direction: column;
+
+        margin-bottom: 3.5rem;
+
+        a {
+            font-size: $text-m; // 16px
+            color: #ff5e45;
+        }
+
+        // 標籤
+        label {
+            margin-bottom: 0.25rem; // 4px
+        }
+
+        // 信箱、密碼 輸入欄
+        > input {
+            width: 100%;
+            padding: 0.5rem 0; // 8px
+            margin-bottom: 1rem; // 16px
+
+            border: 0.0625rem solid #cccccc; // 1px
+            border-radius: 0.25rem; // 4px
+
+            background-repeat: no-repeat;
+            background-position-x: 0.5rem;
+
+            box-shadow: inset 0 0.0625rem 0 0 #ececec; // 1px
+
+            font-size: $text-m; // 16px
+            text-indent: 3rem; // 48px
+        }
+
+        // 圖片取自 Icon8
+        input[type="email"] {
+            background-image: url("https://img.icons8.com/windows/32/3D1101/new-post.png");
+        }
+
+        input[type="password"] {
+            background-image: url("https://img.icons8.com/ios-glyphs/30/3D1101/lock--v1.png");
+        }
+
+        // 註冊、登入 按鈕
+        .final-btn {
+            width: 100%;
+            margin: 0 auto;
+
+            input {
+                width: 35%;
+
+                padding: 0.5rem 0; // 8px
+                margin: 1.5rem 2%; // 24px
+
+                color: $text-white-color; // #fff
+
+                border: none;
+                border-radius: 0.25rem; // 4px
+            }
+
+            // 註冊 按鈕
+            input[type="button"] {
+                background: rgba(0, 0, 0, 0.35);
+            }
+
+            // 登入 按鈕
+            input[type="submit"] {
+                background: #f56c23;
+            }
+
+            // 註冊、登入 按鈕 hover 效果
+            input:hover,
+            input:active {
+                cursor: pointer;
+                opacity: 0.65;
+            }
+        }
+    }
+}

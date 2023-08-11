@@ -1,0 +1,46 @@
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile-l {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 376px) {
+        @content;
+    }
+}
+
+// padding & margin 同時要用 4 個方向時才使用
+// 輸入 px
+@mixin padding($top, $right, $bottom, $left) {
+    padding: #{$top / 16}rem #{$right / 16}rem #{$bottom / 16}rem #{$left / 16}rem;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+    margin: #{$top / 16}rem #{$right / 16}rem #{$bottom / 16}rem #{$left / 16}rem;
+}
+
+// 圖片取代文字
+@mixin hide-text($width, $height, $image-path) {
+    width: $width;
+    height: $height;
+    background: url($image-path) no-repeat;
+
+    display: block;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// 並排效果
+@mixin display-flex($justify-content: flex-start, $align-items: stretch) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

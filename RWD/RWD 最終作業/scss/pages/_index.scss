@@ -1,0 +1,388 @@
+main {
+    // 圖片  hover 效果 ( LightBox )
+    a:hover,
+    a:active {
+        opacity: 0.75;
+    }
+}
+
+// 特色
+.feature {
+    padding: 3.125rem 0; // 50px
+
+    text-align: center;
+
+    // 客人總是...是什麼
+    .feature-title {
+        position: relative;
+
+        margin-bottom: 2rem; // 32px
+
+        font-size: $text-l; // 20px
+        line-height: 2rem; // 32px
+    }
+
+    // 偽元素，左右邊的橫線
+    // 手機: 消除
+    .feature-title::before,
+    .feature-title::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+
+        width: 10%;
+
+        border: 0.0625rem solid #979797; // 1px
+
+        @include mobile() {
+            display: none;
+        }
+    }
+
+    // 個別調整水平位置
+    .feature-title::before {
+        left: 30%;
+
+        @include tablet() {
+            left: 20%;
+        }
+    }
+
+    .feature-title::after {
+        right: 30%;
+
+        @include tablet() {
+            right: 20%;
+        }
+    }
+
+    // 圖片 + 標題 + 段落
+    .feature-content {
+        @include display-flex(space-around);
+        // display: flex;
+        // justify-content: space-around;
+
+        // 手機: 垂直、置中
+        @include mobile-l() {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        li {
+            width: 33.3333%;
+
+            // 單欄式，寬度變寬
+            @include mobile-l() {
+                width: 95%;
+            }
+
+            // 圖片
+            a {
+                img {
+                    margin-bottom: 1rem; // 16px
+                    border-radius: 50%;
+                }
+            }
+
+            h3 {
+                font-weight: bold;
+                font-size: $text-l; // 20px
+
+                @include tablet() {
+                    font-size: $text-m; // 16px
+                    line-height: 125%;
+                }
+
+                @include mobile-l() {
+                    font-size: $text-l; // 20px
+                }
+            }
+
+            p {
+                @include margin(12, 60, 30, 60);
+
+                text-align: left;
+                font-size: $text-m; // 16px
+
+                @include tablet() {
+                    margin: 1.5rem 1rem; //20px 16px
+                    font-size: $text-s; // 12px
+                    line-height: 125%;
+                }
+
+                @include mobile-l() {
+                    font-size: $text-m; // 16px
+                }
+            }
+        }
+    }
+}
+
+// 今日主廚
+.chef {
+    @include display-flex(center, center);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    gap: 10%;
+
+    color: $text-white-color; // #fff
+    background: $primary-text-color; // #3d1101
+
+    // 手機: 垂直、置中
+    @include mobile-l() {
+        flex-direction: column;
+
+        padding: 2rem 0; // 32px
+    }
+
+    // 圖片
+    a {
+        display: block;
+
+        @include mobile-l() {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    // 文字方框
+    .chef-content {
+        width: 45%;
+
+        // margin: 80px 10px 80px -40px;
+        @include margin(80, 10, 80, -40);
+
+        // 變寬
+        @include tablet() {
+            width: 75%;
+        }
+
+        // 變寬、置中
+        @include mobile-l() {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        // 今日主廚
+        h2 {
+            font-size: $text-l; // 20px
+        }
+
+        // Today Chef
+        h3,
+        p {
+            font-size: $text-m; // 16px
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// 感想
+.feelings {
+    padding: 3.125rem 0; //50px
+
+    // 聽聽別人的感想
+    h2 {
+        margin-bottom: 2rem; // 32px
+
+        text-align: center;
+        font-size: $text-xl; // 24px
+        font-weight: bold;
+    }
+
+    // 顧客感想
+    .swiper {
+        margin: 0 1.5%;
+
+        .swiper-wrapper .swiper-slide {
+            @include display-flex($align-items: flex-start);
+            // display: flex;
+            // align-items: flex-start;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                object-fit: contain;
+
+                border-radius: 50%;
+            }
+
+            .feelings-box {
+                margin: 0 1rem; // 16px
+
+                // 顧客名稱
+                h3 {
+                    margin: 1.5rem 0; // 24px
+                    font-size: $text-l; // 20px
+                }
+
+                // 感想文
+                p {
+                    // 平板: 感想文往左移動
+                    @include tablet() {
+                        width: 150%;
+                        margin-left: -4rem;
+                    }
+
+                    // 手機: 復原
+                    @include mobile-l() {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                }
+
+                // 結尾
+                .feelings-end {
+                    text-align: right;
+                }
+            }
+        }
+
+        // 箭頭
+        .swiper-button-prev,
+        .swiper-button-next {
+            margin: 0 -0.75rem; // -12px
+
+            scale: 0.6;
+            opacity: 0.4;
+            color: $primary-text-color; // #3d1101
+        }
+
+        // 箭頭 hover 效果
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover,
+        .swiper-button-prev:active,
+        .swiper-button-next:active {
+            opacity: 1;
+        }
+
+        // 底下的點點
+        .swiper-pagination-bullet,
+        .swiper-pagination-bullet-active {
+            margin-bottom: -0.75rem;
+            background-color: $primary-text-color; // #3d1101
+        }
+    }
+}
+
+// 定位
+.reservation {
+    padding: 3.125rem 0; //50px
+    background: #fff;
+
+    // 我們的位置...先定位呢？
+    h2 {
+        margin-bottom: 2.5rem; // 40px
+
+        font-size: $text-xl; // 24px
+        text-align: center;
+        font-weight: bold;
+        line-height: 150%;
+    }
+
+    .reservation-details {
+        @include display-flex(center, center);
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+
+        gap: 5%;
+
+        // 手機: 垂直
+        @include mobile-l() {
+            flex-direction: column;
+        }
+
+        // 地圖
+        .map {
+            width: 35%;
+            height: 386px;
+
+            // 隨螢幕調整寬度 ( 高度不變 )
+            @include tablet() {
+                width: 45%;
+            }
+
+            @include mobile-l() {
+                width: 90%;
+                margin-bottom: 2rem; // 12px
+            }
+        }
+
+        form {
+            @include display-flex($align-items: flex-start);
+            // display: flex;
+            // align-items: flex-start;;
+
+            flex-direction: column;
+
+            width: 45%;
+
+            @include mobile-l() {
+                width: 90%;
+            }
+
+            label {
+                margin-bottom: 0.25rem; // 4px
+            }
+
+            .user-input {
+                width: 100%;
+                padding: 0.5rem; // 8px
+                margin-bottom: 0.75rem; // 12px
+
+                border: 0.0625rem solid #cccccc; // 1px
+                box-shadow: inset 0px 1px 0px 0px #ececec;
+                border-radius: 0.25rem; // 4px
+            }
+
+            .user-input:focus {
+                outline: 0.125rem solid black; // 2px
+            }
+
+            // 取消、送出 按鈕
+            .final-btn {
+                @include display-flex(flex-end);
+                // display: flex;
+                // justify-content: flex-end;
+
+                width: 100%;
+                gap: 0.75rem; // 12px
+
+                input {
+                    width: 15%;
+                    padding: 0.5rem 0; // 8px
+
+                    color: $text-white-color; // #fff
+
+                    border: none;
+                    border-radius: 0.25rem;
+
+                    @include tablet() {
+                        width: 20%;
+                    }
+                }
+
+                input:hover,
+                input:active {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+
+                // 取消 按鈕
+                input[type="button"] {
+                    background-color: rgba($color: #000000, $alpha: 0.35);
+                }
+
+                // 送出 按鈕
+                input[type="submit"] {
+                    background-color: #f56c23;
+                }
+            }
+        }
+    }
+}

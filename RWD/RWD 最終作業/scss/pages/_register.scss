@@ -1,0 +1,70 @@
+// 大部分內容跟 login page 相同
+// 因此有些 css 屬性要去 ./_login.scss 檔案看
+
+// 註冊方塊
+.register-box {
+    width: 66.6666%;
+
+    // 隨螢幕調整寬度占比
+    @include tablet() {
+        width: 85%;
+    }
+
+    @include mobile-l() {
+        width: 90%;
+    }
+
+    @include mobile() {
+        width: 95%;
+    }
+
+    .register-detail {
+        @include display-flex(space-around);
+        // display: flex;
+        // justify-content: center;
+
+        margin-bottom: 3.5rem;
+
+        // 手機: 垂直 ( 顛倒 ) ( 因為使用者條款感覺不太重要 )
+        @include mobile-l() {
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+
+        // 使用者條款
+        .user-terms {
+            text-align: left;
+            width: 45%;
+
+            @include mobile-l() {
+                width: 95%;
+                margin-bottom: 1rem;
+            }
+
+            h5 {
+                font-size: $text-m; // 16px
+                font-weight: bold;
+            }
+
+            p {
+                font-size: $text-s; // 12px
+            }
+        }
+
+        // 註冊表單
+        .register-form {
+            width: 45%;
+            margin-bottom: 0; // 抵銷 .login-form 的 margin-bottom 屬性
+
+            @include mobile-l() {
+                width: 95%;
+            }
+
+            // 註冊按鈕
+            .final-btn {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

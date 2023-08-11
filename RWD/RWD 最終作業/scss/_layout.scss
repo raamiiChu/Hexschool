@@ -1,0 +1,508 @@
+// 整體框架
+.wrap {
+    max-width: 100%;
+    margin: 0 auto;
+
+    color: $primary-text-color; // #fff
+    background-color: $primary-bg-color; // #fff
+
+    line-height: $primary-line-height; // 150%
+    letter-spacing: $primary-letter-space; // 0.125rem (2px)
+}
+
+// 導覽列
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    background: $nav-bg-color;
+
+    @include display-flex(space-around, center);
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+
+    // 平板: logo、導覽按鈕 靠兩邊
+    @include tablet() {
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    // 網頁 logo
+    h1 {
+        @include mobile-l() {
+            margin-top: 10px;
+        }
+
+        a {
+            @include hide-text(120px, 24px, "../assets/logo_w@svg.svg");
+        }
+
+        // logo hover 效果
+        a:hover,
+        a:active {
+            opacity: 0.7;
+        }
+    }
+
+    // 漢堡選單
+    .mobile-menu-dropdown {
+        display: none;
+
+        max-width: 100%;
+        text-align: right;
+
+        @include mobile-l() {
+            display: block;
+
+            padding: 1.25rem 1.5rem; // 20px 24px
+        }
+    }
+
+    // 分頁選單
+    .menu {
+        @include display-flex(space-around);
+        // display: flex;
+        // justify-content: space-around;
+
+        // 手機: 消除
+        @include mobile-l() {
+            display: none;
+
+            position: absolute;
+            z-index: 100;
+            top: 100%;
+            left: 0;
+
+            width: 100%;
+
+            background: $nav-bg-color;
+        }
+
+        // 選單文字設定
+        li {
+            // 當前頁面
+            .current-page {
+                color: rgb(255, 247, 95);
+            }
+
+            // 分頁選單連結
+            a {
+                position: relative;
+
+                display: block;
+
+                padding: 1.25rem 1.5rem; // 20px 24px
+
+                font-size: $text-m; // 16px
+                text-align: center;
+
+                // 字體變大；粗體；間距變大
+                @include mobile-l() {
+                    font-size: $text-l; // 20px
+                    font-weight: bold;
+                    letter-spacing: 0.25rem; // 4px
+                }
+            }
+
+            // 偽元素，用於 hover 效果
+            a::after {
+                content: "";
+                position: absolute;
+                width: 0%;
+
+                bottom: 0;
+                left: 0;
+
+                border-bottom: 0.25rem solid #fff; // 4px
+
+                transition: all 0.3s;
+
+                // 調整底線長度
+                @include mobile-l() {
+                    left: 25%;
+                    border-bottom: 0.125rem solid #fff; // 2px
+                }
+            }
+
+            a:hover::after,
+            a:active::after {
+                width: 100%;
+
+                // 調整底線長度
+                @include mobile-l() {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    // 啟動手機版選單 ( jQuery )
+    // 用 jq.slideToggle 就能添加 display: block;，所以先註解起來
+    // .menu.active {
+    //     display: block;
+    // }
+}
+
+// 標頭 ( banner )
+.header {
+    position: relative;
+
+    height: 420px;
+
+    color: $text-white-color;
+    background-image: url("../assets/header_desktop@2x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    // 變更圖片
+    @include mobile-l() {
+        background-image: url("../assets/header_mobile.png");
+    }
+
+    // 文字方塊
+    .header-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); // 讓文字方塊能置中
+
+        width: 500px; // 固定寬度，為了不要讓字跑掉
+        @include padding(28, 42, 26, 22); // padding: 20px 42px 26px 22px;
+
+        background: rgba($color: #000000, $alpha: 0.35);
+
+        text-align: center;
+
+        // 寬度逐漸變小
+        @include tablet() {
+            width: 400px;
+        }
+
+        // 調整 padding 置中，並製造想要的換行效果
+        @include mobile-l() {
+            width: 315px;
+            padding: 20px 5px;
+        }
+
+        @include mobile() {
+            width: 225px;
+            padding: 20px 25px;
+        }
+
+        // 咬一口...
+        h2 {
+            margin-bottom: 1rem; // 16px
+
+            font-size: $text-4xl; // 36px
+            font-weight: bold;
+
+            // 平板: 字體變小
+            @include tablet() {
+                font-size: $text-2xl; // 28px
+            }
+
+            // 手機: 字體變小；行距變大
+            @include mobile-l() {
+                font-size: $text-xl; // 24px
+                line-height: 125%;
+
+                margin-bottom: 0;
+            }
+        }
+
+        // 七夕...大漢堡
+        p {
+            font-size: $text-m; // 16px
+
+            // 手機: 字變大 (因為有多的空間，原因見底下的 span)
+            @include mobile-l() {
+                font-size: $text-l; // 20px
+            }
+
+            // 七夕絕對...好滋味
+            span {
+                // 手機: 直接消除
+                @include mobile-l() {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// 標尾
+.footer {
+    @include display-flex(space-around);
+    // display: flex;
+    // justify-content: space-around;
+
+    padding: 3rem 0;
+    background: $footer-bg-color; // #efe9e7
+
+    // footer 高度會逐漸變小
+    // 平板: 元素置中
+    @include tablet() {
+        justify-content: center;
+        padding: 2rem 0; // 32px
+    }
+
+    // 手機: 元素垂直
+    @include mobile() {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0; // 24px
+    }
+
+    // 所有 footer 連結的 hover 效果
+    a:hover,
+    a:active {
+        opacity: 0.7;
+    }
+
+    // 關於六角西餐廳 & 聯絡方式
+    .footer-content {
+        @include display-flex();
+        // display: flex;
+
+        margin-left: 8%;
+        gap: 8%;
+
+        font-size: $text-xl; // 24px;
+
+        // 調整與邊界的間距 ( 避免太空 )
+        @include tablet() {
+            margin-left: 2.5%;
+        }
+
+        .about-us,
+        .contact-us {
+            max-width: 450px;
+
+            h3 {
+                margin-bottom: 1rem; //16px
+            }
+
+            // 調整寬度、字體大小、行距
+            @include tablet() {
+                max-width: 200px;
+                font-size: $text-l; // 20px
+                letter-spacing: 0;
+            }
+        }
+
+        // 關於 六角西餐廳
+        .about-us {
+            // 手機: 直接消除
+            @include mobile-l() {
+                display: none;
+            }
+
+            // 內文
+            p {
+                font-size: $text-m; // 16px;
+                letter-spacing: 0;
+
+                // 最多顯示 4 行
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                // 平板: 字體、行距變小
+                @include tablet() {
+                    font-size: $text-s; // 12px
+                    line-height: 125%;
+                }
+            }
+        }
+
+        // 聯絡方式
+        .contact-us {
+            white-space: nowrap;
+
+            // 調整左方間距 ( 因為 about-us 消除導致 contact-us 過於貼近邊界 )
+            @include mobile-l() {
+                margin-left: 1rem;
+            }
+
+            // 變成垂直排列，所以調整下方間距
+            // 為了置中，左方間距歸零
+            @include mobile() {
+                margin-left: 0;
+                margin-bottom: 1rem; // 16px
+            }
+
+            h3 {
+                // 手機: 置中；字體變小，但變粗體
+                @include mobile() {
+                    margin-bottom: 0.5rem; // 8px
+
+                    font-size: $text-xl; // 24px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+
+            // 地址、電話、信箱
+            .contact-details {
+                list-style-position: inside;
+                list-style-type: disc;
+
+                // 前面的 ● 移到外側 ( 連帶影響內部元素的位置 )
+                @include mobile() {
+                    list-style-position: outside;
+                }
+
+                li {
+                    // 微調間距
+                    @include tablet() {
+                        margin-top: -5%;
+                    }
+
+                    @include mobile-l() {
+                        margin-top: 0%;
+                        margin-left: 5%;
+                    }
+
+                    a {
+                        display: inline-block;
+
+                        max-width: 300px;
+                        margin-left: -1rem; // 16px
+
+                        color: $primary-text-color; // #3D1101
+                        font-size: $text-m; // 16px;
+
+                        // 字體先變小在變大 (因為少了 "about-us" 多出額外空間)
+                        @include tablet() {
+                            font-size: $text-s; // 12px
+                        }
+
+                        // 往左移動 ( 因為前面的 ● 移到外側 )
+                        @include mobile-l() {
+                            margin-left: 0;
+                            font-size: $text-m; // 16px
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 社群方塊
+    .media {
+        margin-right: 4%;
+
+        // 縮放大小，避免過大
+        @include tablet() {
+            scale: 0.9;
+        }
+
+        // margin 調整為 0 (要置中)
+        @include mobile-l() {
+            scale: 0.7;
+            margin-right: 0;
+        }
+
+        // logo
+        h2 {
+            margin-bottom: 1.5rem; // 24px
+
+            // 下方間距變大
+            @include mobile-l() {
+                margin-bottom: 2rem; // 32px
+            }
+
+            a {
+                @include hide-text(242px, 48px, "../assets/logo_l@svg.svg");
+            }
+        }
+
+        // 社群連結
+        .media-links {
+            @include display-flex(flex-end);
+            // display: flex;
+            // justify-content: flex-end;
+
+            gap: 0.75rem; // 12px
+
+            // 置中；社群連結間的間距變大
+            @include mobile-l() {
+                justify-content: center;
+                gap: 3rem; // 48px
+            }
+
+            a {
+                display: block;
+
+                // 社群連結變大
+                @include mobile-l() {
+                    scale: 1.5;
+                }
+            }
+        }
+    }
+}
+
+// 回到最頂端 按鈕
+.scroll-to-top {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+
+    display: none;
+
+    width: 3.5rem; // 56px
+    height: 3.5rem; // 56px
+    border: 0.125rem solid #000; // 2px
+    border-radius: 50%;
+
+    color: $primary-text-color; // #3d1101
+    background: #ffffff7b;
+
+    // 隨畫面縮小
+    @include tablet() {
+        scale: 0.9;
+    }
+
+    @include mobile-l() {
+        scale: 0.85;
+    }
+
+    @include mobile() {
+        scale: 0.8;
+    }
+
+    // icon
+    i {
+        // 置中
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// 回到最頂端 hover 效果
+.scroll-to-top:hover,
+.scroll-to-top:active {
+    color: $text-white-color; // #fff
+    background: $primary-text-color; // #3d1101
+}
+
+// LightBox 字幕大小
+.lb-caption {
+    font-size: $text-l !important; // 20px
+}
+
+// 檢查用
+// * {
+//     background: #000 !important;
+//     color: #0f0 !important;
+//     outline: solid #f00 1px !important;
+// }
