@@ -918,8 +918,6 @@ main a:active {
   display: block;
   padding: 0.5rem;
   color: #3d1101;
-  white-space: nowrap;
-  overflow: hidden;
 }
 .cart-box .cart-nav .cart-nav-menu li a:hover,
 .cart-box .cart-nav .cart-nav-menu li a:active {
@@ -1103,10 +1101,12 @@ main a:active {
   font-size: 1.25rem;
 }
 .cart-box .cart-content .cart-list li h4 {
+  padding: 0 0.375rem;
   margin-bottom: 2rem;
   font-size: 0.75rem;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cart-box .cart-content .cart-list li h4::after {
   content: "";
